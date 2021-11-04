@@ -1,0 +1,29 @@
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - npm install
+      # - composer install
+    - npm run build
+    - echo "Compile complete."
+  artifacts:
+    paths:
+      - dist
+      # - vendor
+      # - src
+      # - index.php
+    expire_in: 1 day
+deploy-job:
+  stage: deploy
+  script:
+    # NE CHANGEZ QUE CETTE PARTIE SI VOUS AVEZ UNE RAISON SPECIFIQUE DE LE FAIRE
+    - echo "Deploying application..."
+    - mkdir -p /var/www/html/$CI_PROJECT_PATH_SLUG/$CI_COMMIT_REF_NAME
+    - rm -rf /var/www/html/$CI_PROJECT_PATH_SLUG/$CI_COMMIT_REF_NAME/*
+    - cp -r * /var/www/html/$CI_PROJECT_PATH_SLUG/$CI_COMMIT_REF_NAME
+    - echo "Application successfully deployed."
+    - echo "Application available at http://phoenixiut.ddns.net:8082/$CI_PROJECT_PATH_SLUG/$CI_COMMIT_REF_NAME"

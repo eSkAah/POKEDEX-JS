@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/src/style/main.scss">
+  <title>Pokédex</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <img src="/static/logo.png" alt="logo" style="width: 120px; height: 50px;">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pokédex</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-12 col-md-4 p-3" id="searchBox">
+
+        <!-- Search bar -->
+        <div class="side-bar">
+          <form class="d-flex mt-2">
+            <input class="form-control me-sm-2" type="text" id="searchInput" placeholder="Search">
+          </form>
+
+          <!-- Filter Bar -->
+          <select name="filter" id="filter" class="form-select mt-2 form-select-md">
+            <option value="1">Number</option>
+            <option value="2">Name A-Z</option>
+            <option value="3">Name Z-A</option>
+          </select>
+        </div>
+        <hr>
+
+        <!-- PokemonList -->
+        <div class="overflow-auto">
+          <tbody>
+            <ul id="pokemonMenu">
+            </ul>
+          </tbody>
+        </div>
+
+      </div>
+
+      <div class="col-sm-12 col-md-8 p-3" id="pokemonScreen">
+
+        <!--Pokemon display row-->
+        <div class="row">
+          <div class="infoWrapper col-12 " id="infoWrapper">
+            <div class="col-sm-12 col-md-4">
+              <!-- Image Pokemon -->
+              <img src="" class="img-fluid img-thumbnail" alt="image pokémon" id="pokemonImg">
+            </div>
+            <!-- Pokemon infos -->
+            <div class="col-sm-12 col-md-6">
+              <div class="info">
+                <ul>
+                  <li>
+                    <h3 id="pokemonName"></h3>
+                  </li>
+                  <li id="pokemonType"></li>
+                  <li id="pokemonAbilities"></li>
+                  <li id="pokemonHeight"></li>
+                  <li id="pokemonWeight"></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <!-- Favorite Icon -->
+              <div id="heart">
+                <input type="checkbox" class="btn heart-checkbox" id="heart-checkbox">
+                <label for="heart-checkbox" class="fa fa-heart"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evolution list images and rare icon-->
+        <div class="row">
+          <div class="col-sm-12 col-md-8">
+            <h2>Evolution</h2>
+            <ul id="evoList"></ul>
+          </div>
+          <div class="col-sm-12 col-md-4" id="rare">
+
+          </div>
+        </div>
+
+        <!-- Pokemon Stats & Movelist -->
+        <div class="row">
+          <div class="statWrapper col-md-12 mt-5">
+            <div class="col-sm-12 col-md-4" style="width: 250px;">
+              <h2>Base stats</h2>
+              <div id="pokemonHp">HP</div>
+              <progress max="252" value=""></progress>
+
+              <div id="pokemonAtk">ATK:</div>
+              <progress max="252" value=""></progress>
+
+              <div id="pokemonDef">DEF:</div>
+              <progress max="252" value=""></progress>
+
+              <div id="pokemonSpAtk"></div>
+              <progress max="150" value=""></progress>
+
+              <div id="pokemonSpDef"></div>
+              <progress max="150" value=""></progress>
+
+              <div id="pokemonSpd"></div>
+              <progress max="150" value=""></progress>
+            </div>
+
+            <div class="col-sm-12 col-md-8">
+              <h2>Move List</h2>
+              <div id="moveList">
+                </d>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- MODAL 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+  <div class="modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+  -->
+    <!-- <script src="js/modules/Pokemons.js"></script> -->
+</body>
+
+</html>

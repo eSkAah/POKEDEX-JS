@@ -1,0 +1,194 @@
+@import './bootstrap.min.css';
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", sans-serif;
+    background-color: #f5f5f5;
+
+
+    
+    
+    .navbar {
+      background-color: rgb(246, 92, 100);
+      color: rgb(211, 211, 78);
+      height: 90px;
+      font-size: xx-large;
+    }
+    
+    .container {
+      border: 1px solid black;
+    }
+    
+    #heart {
+      font-size: 2.5em;
+    
+      input {
+        display: none;
+    
+        &:checked+label {
+          color: red;
+        }
+      }
+    
+      input+label {
+        padding: 0.3rem 0.5rem;
+      }
+    
+      label {
+        cursor: pointer;
+      }
+    
+    }
+    
+   
+    
+    #pokemonMenu { 
+      height: 543px; 
+      overflow: auto; 
+      margin:0; 
+      padding: 0;
+    }
+    
+    #pokemonMenu li {
+      cursor: pointer;
+      
+      &:hover {
+        opacity: 0.3;
+      }
+      
+    }
+
+    #pokemonScreen {
+      margin: 0;
+      padding: 0;
+    }
+
+    .infoWrapper {
+      display: flex;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    #pokemonImg {
+      height: 250px;
+      width: 250px;
+      border: inherit;
+      background-color: inherit;
+    }
+
+    .info > ul {
+      padding: 0;
+      margin: 0;
+      height: 250px;
+      font-size : 1.2em;
+
+      & > li {
+        padding-bottom: 10px;
+      }
+    }
+
+    .statWrapper {
+      display: flex;
+    }
+
+    #moveList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      font-size: 1.2em;
+      text-align: center;
+
+    & div {
+      background-color: rgba(151, 151, 151, 0.5);
+      border-radius: 5px;
+      
+      &:hover {
+        cursor: pointer;
+        zoom: 1.5;
+        transition: 1s ease-in-out ;
+
+      }
+    }
+    }
+
+
+  }
+
+  .legendary{
+    background: linear-gradient(304deg, #1174e6, #31e0f7, #d17cf9);
+    background-size: 600% 600%;
+    border-radius: 5px;
+    padding: 5px;
+    animation: mythicBgMoving 4s ease infinite;
+  }
+
+
+  @keyframes mythicBgMoving {
+    0%{background-position:0% 45%}
+    50%{background-position:100% 56%}
+    100%{background-position:0% 45%}
+  }
+
+
+  .mythic{
+    background: linear-gradient(304deg, #e65e11, #f7a431, #ebf97c);
+    background-size: 600% 600%;
+    border-radius: 5px;
+    padding: 5px;
+    animation: mythicBgMoving 4s ease infinite;
+  }
+
+
+  @keyframes mythicBgMoving {
+    0%{background-position:0% 45%}
+    50%{background-position:100% 56%}
+    100%{background-position:0% 45%}
+  }
+
+
+
+@media screen and (max-width: 540px  ) { 
+  
+  .overflow-auto { 
+    height: 200px; 
+    overflow: auto; 
+    margin:0; 
+    padding: 0;
+  }
+
+  #pokemonImg {
+    height: 150px;
+    width: 150px;
+    border: inherit;
+    background-color: inherit;
+  }
+
+  .infoWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+  .info > ul {
+    padding: 0;
+    margin: 0;
+    height: 150px;
+    font-size : 1.2em;
+
+    & > li {
+      padding-bottom: 5px;
+    }
+  }
+
+  .statWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
